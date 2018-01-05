@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Frontend</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://use.fontawesome.com/eb0da5ed6d.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  
+ 
+</head>
+<body id="main">
+  <app-root></app-root>
+  <script>
+		function openNav() {
+		
+			
+			if($("#main").css("left")== ("-230px")){
+				document.getElementById("main").style.left= "0";
+			}
+			else{
+				document.getElementById("main").style.left = "-230px";
+			}
+			
+    	
+		}
+
+		function closeNav() {
+   		
+    		document.getElementById("main").style.left= "0";
+
+		}
+		
+		
+		
+		
+		if (matchMedia) {
+			  var mq = window.matchMedia("(max-width: 920px)");
+			  mq.addListener(WidthChange);
+			  WidthChange(mq);
+			}
+
+			// media query change
+			function WidthChange(mq) {
+				if (mq.matches) {
+					
+					$("#mywebnav").css("display","none");
+					$("#mymobnav").css("display","block");
+					$("#mynavbtn").css("display","inline");
+					closeNav();
+				  
+				  }
+				
+
+			}
+			if (matchMedia) {
+				  var mq = window.matchMedia("(min-width: 920px)");
+				  mq.addListener(WidthChange2);
+				  WidthChange2(mq);
+				}
+			function WidthChange2(mq) {
+				if (mq.matches) {
+					console.log("working");
+					$("#mywebnav").css("display","inline");
+					$("#mymobnav").css("display","none");
+					$("#mynavbtn").css("display","none");
+					closeNav();
+				  }
+				
+
+				}
+			$(document).ready(function(){
+				$('.collapse').collapse("hide");
+				
+			})
+			
+	</script>
+<script type="text/javascript" src="inline.bundle.js"></script><script type="text/javascript" src="polyfills.bundle.js"></script><script type="text/javascript" src="styles.bundle.js"></script><script type="text/javascript" src="vendor.bundle.js"></script><script type="text/javascript" src="main.bundle.js"></script></body>
+</html>
